@@ -24,20 +24,20 @@ public:
 	Fox();
 
 	/// red, green, blue - преобладающий цвет лисы в RGB формате
-	Fox(std::string name, bool isMale, unsigned age, std::string species,
+	Fox(const std::string& name, bool isMale, unsigned age, const std::string& species,
 		unsigned char red, unsigned char green, unsigned char blue);
 
 	/// прочитать имя
 	std::string getName() const;
 
 	/// задать имя
-	void setName(std::string name);
+	void setName(const std::string& name);
 
 	/// прочитать вид
 	std::string getSpecies() const;
 
 	/// задать вид
-	void setSpecies(std::string species);
+	void setSpecies(const std::string& species);
 
 	/// прочитать возраст
 	unsigned getAge() const;
@@ -49,7 +49,7 @@ public:
 	void random();
 
 	/// задать цвет соответствующий преобладающему цвету вида
-	void setColorBasedOnSpecies(std::string species);
+	void setColorBasedOnSpecies(const std::string& species);
 
 	/// вывод характеристик в консоль
 	void printToConsole() const;
@@ -58,10 +58,10 @@ public:
 	std::string toString() const;
 
 	/// сохранение объекта в файл
-	void saveToFile(const char* filename) const;
+	void saveToFile(const std::string& filename) const;
 	
 	/// загрузка объекта из файла
-	void loadFromFile(const char* filename) const;
+	void loadFromFile(const std::string& filename) const;
 
 
 private:

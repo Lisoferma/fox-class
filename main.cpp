@@ -20,7 +20,7 @@ int main() {
 	// ----- пример работы с классом -----
 
 	Fox fox;
-	string filename = "Fox data";
+	const string filename = "fox.data";
 
 	cout << "fox():\n" << endl;
 	fox.printToConsole();
@@ -30,9 +30,9 @@ int main() {
 	cout << fox.toString() << endl;
 
 	cout << "\nSave and load from file:\n" << endl;
-	fox.saveToFile("Fox data");
+	fox.saveToFile(filename);
 	fox.setName("If the load does not work you will see this");
-	fox.loadFromFile("Fox data");
+	fox.loadFromFile(filename);
 
 	fox.printToConsole();
 

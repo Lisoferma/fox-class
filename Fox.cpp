@@ -34,7 +34,7 @@ Fox::Fox() {
 
 
 /// red, green, blue - преобладающий цвет лисы в RGB формате
-Fox::Fox(std::string name, bool isMale, unsigned age, std::string species,
+Fox::Fox(const std::string& name, bool isMale, unsigned age, const std::string& species,
 	     unsigned char red, unsigned char green, unsigned char blue) {
 
 	setName(name);
@@ -53,7 +53,7 @@ std::string Fox::getName() const {
 
 
 /// задать имя
-void Fox::setName(std::string name) {
+void Fox::setName(const std::string& name) {
 
 	if (name.empty())
 		throw std::length_error("Length error: argument is empty");
@@ -70,7 +70,7 @@ std::string Fox::getSpecies() const {
 
 
 /// задать вид
-void Fox::setSpecies(std::string species) {
+void Fox::setSpecies(const std::string& species) {
 
 	if (species.empty())
 		throw std::length_error("Length error: argument is empty");
@@ -113,7 +113,7 @@ void Fox::random() {
 
 
 /// задать цвет соответствующий преобладающему цвету вида
-void Fox::setColorBasedOnSpecies(std::string species) {
+void Fox::setColorBasedOnSpecies(const std::string& species) {
 
 	if (species.empty()) {
 		throw std::length_error("Length error: argument is empty");
@@ -186,7 +186,7 @@ std::string Fox::toString() const {
 
 
 /// сохранение объекта в файл
-void Fox::saveToFile(const char* filename) const {
+void Fox::saveToFile(const std::string& filename) const {
 
 	std::ofstream file(filename, std::ios::binary);
 
@@ -207,7 +207,7 @@ void Fox::saveToFile(const char* filename) const {
 
 
 /// загрузка объекта из файла
-void Fox::loadFromFile(const char* filename) const {
+void Fox::loadFromFile(const std::string& filename) const {
 
 	std::ifstream file(filename, std::ios::binary);
 
