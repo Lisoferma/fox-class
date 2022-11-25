@@ -183,3 +183,46 @@ std::string Fox::toString() const {
 
 	return str;
 }
+
+
+/// сохранение объекта в файл
+void Fox::saveToFile(const char* filename) const {
+
+	std::ofstream file(filename, std::ios::binary);
+
+	if (!file.is_open()) {
+		throw std::runtime_error("Runtime error: file opening failed");
+	}
+
+	file.write((char*)&_name,    sizeof(_name));
+	file.write((char*)&isMale,   sizeof(isMale));
+	file.write((char*)&_age,     sizeof(_age));
+	file.write((char*)&_species, sizeof(_species));
+	file.write((char*)&prevailingСolor.red,   sizeof(prevailingСolor.red));
+	file.write((char*)&prevailingСolor.green, sizeof(prevailingСolor.green));
+	file.write((char*)&prevailingСolor.blue,  sizeof(prevailingСolor.blue));
+
+	file.close();
+}
+
+
+/// загрузка объекта из файла
+void Fox::loadFromFile(const char* filename) const {
+
+	std::ifstream file(filename, std::ios::binary);
+
+	if (!file.is_open()) {
+		throw std::runtime_error("Runtime error: file opening failed");
+	}
+
+	file.read((char*)&_name,    sizeof(_name));
+	file.read((char*)&isMale,   sizeof(isMale));
+	file.read((char*)&_age,     sizeof(_age));
+	file.read((char*)&_species, sizeof(_species));
+	file.read((char*)&prevailingСolor.red,   sizeof(prevailingСolor.red));
+	file.read((char*)&prevailingСolor.green, sizeof(prevailingСolor.green));
+	file.read((char*)&prevailingСolor.blue,  sizeof(prevailingСolor.blue));
+
+	file.close();
+}
+

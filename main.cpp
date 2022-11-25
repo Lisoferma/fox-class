@@ -20,7 +20,7 @@ int main() {
 	// ----- пример работы с классом -----
 
 	Fox fox;
-
+	string filename = "Fox data";
 
 	cout << "fox():\n" << endl;
 	fox.printToConsole();
@@ -28,6 +28,13 @@ int main() {
 	cout << "\nfox.random():\n" << endl;
 	fox.random();
 	cout << fox.toString() << endl;
+
+	cout << "\nSave and load from file:\n" << endl;
+	fox.saveToFile("Fox data");
+	fox.setName("If the load does not work you will see this");
+	fox.loadFromFile("Fox data");
+
+	fox.printToConsole();
 
 
 	// ----- динамическое создание объекта -----

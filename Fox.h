@@ -8,10 +8,11 @@
 #include "СolorRGB.h"							// для цвета шерсти
 
 #include <cstdlib>								// для srand
-#include <iostream>	
-#include <string>								// для вывода характеристик лисы в строку
+#include <iostream>
+#include <fstream>
+#include <string>
 #include <ctime>								// для инициализации srand
-#include <stdexcept>							// используются стандартные исключения в классе
+#include <stdexcept>
 
 
 class Fox {
@@ -55,6 +56,12 @@ public:
 
 	/// запись характеристик в строку
 	std::string toString() const;
+
+	/// сохранение объекта в файл
+	void saveToFile(const char* filename) const;
+	
+	/// загрузка объекта из файла
+	void loadFromFile(const char* filename) const;
 
 
 private:
