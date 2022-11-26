@@ -128,11 +128,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Fox.h" />
+    <ClInclude Include="test2.h" />
     <ClInclude Include="СolorRGB.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Fox.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="test2.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
